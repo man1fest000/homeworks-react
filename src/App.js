@@ -9,7 +9,7 @@ function App() {
   let [characters, setCharacters] = useState([])
 
   useEffect(()=>{
-      getCharacters().then(value => setCharacters(value.results))
+      getCharacters().then(value => setCharacters(value.results.splice(0, 6)))
   },[])
 
   return (
