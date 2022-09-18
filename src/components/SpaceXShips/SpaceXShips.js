@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-import { getShips } from "../../services/spacexdata.api.service";
-import SpaceXShip from "./SpaceXShip";
+import { getShips } from "../../services/spacexdata.service";
+import SpaceXShip from "../SpaceXShip/SpaceXShip";
 
 const SpaceXShips = () => {
     const [ships, setShips] = useState([]);

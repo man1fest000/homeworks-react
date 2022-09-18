@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-import { getUsers } from "../../services/jsonplaceholder.api.services";
-import User from "./User";
+import { getUsers } from "../../services/jsonplaceholder.services";
+import User from "../User/User";
 
 function Users() {
     let [users, setUsers] = useState([]);
