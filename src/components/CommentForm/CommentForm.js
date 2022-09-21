@@ -10,7 +10,6 @@ const CommentForm = ({setComments}) => {
         reset,
         setValue,
     } = useForm({
-        //resolver: joiResolver(userValidator),
         mode: "all",
     });
 
