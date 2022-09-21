@@ -1,25 +1,21 @@
 import { useForm } from "react-hook-form";
-import { useEffect } from "react";
-
+import { joiResolver } from "@hookform/resolvers/joi";
 
 import { usersService } from "../../services";
+import { userValidator } from "../../validators";
 
 const UserForm = ({ setUsers }) => {
     const {
         register,
         handleSubmit,
         reset,
-
-        setValue,
+        formState: { errors, isValid },
     } = useForm({
         mode: "all",
+        resolver: joiResolver(userValidator),
     });
 
-    useEffect(() => {
-        setValue("name", "John");
-        setValue("email", "random@gmail.com");
-        setValue("phone", "+380");
-    });
+
 
 
     const submit = async (user) => {
@@ -32,12 +28,12 @@ const UserForm = ({ setUsers }) => {
     return (
         <form onSubmit={handleSubmit(submit)}>
             <input type="text" placeholder={"name"} {...register("name")} />
-
+            {errors.name && <span>{errors.name.message}</span>}
             <input type="text" placeholder={"email"} {...register("email")} />
-
+            {errors.email && <span>{errors.email.message}</span>}
             <input type="text" placeholder={"phone"} {...register("phone")} />
-
-            <button >Save</button>
+            {errors.phone && <span>{errors.phone.message}</span>}
+            <button disabled={!isValid} >Save</button>
         </form>
     );
 };

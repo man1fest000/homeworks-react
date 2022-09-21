@@ -1,6 +1,8 @@
 import { useForm } from "react-hook-form";
+import { joiResolver } from "@hookform/resolvers/joi";
+
 import { commentsService } from "../../services";
-import { useEffect } from "react";
+import { commentValidator } from "../../validators";
 
 
 const CommentForm = ({setComments}) => {
@@ -8,16 +10,13 @@ const CommentForm = ({setComments}) => {
         register,
         handleSubmit,
         reset,
-        setValue,
+        formState: { errors, isValid },
     } = useForm({
+        resolver: joiResolver(commentValidator),
         mode: "all",
     });
 
-    useEffect(()=>{
-        setValue("name","Viktor");
-        setValue("email","random@gmail.com");
-        setValue("body","Hello World");
-    })
+
 
 
     const submit = async (comment) => {
@@ -30,12 +29,12 @@ const CommentForm = ({setComments}) => {
     return (
         <form onSubmit={handleSubmit(submit)}>
             <input type="text" placeholder={"name"} {...register("name")} />
-
+            {errors.name && <span>{errors.name.message}</span>}
             <input type="text" placeholder={"email"} {...register("email")} />
-
+            {errors.email && <span>{errors.email.message}</span>}
             <input type="text" placeholder={"body"} {...register("body")} />
-
-            <button>Save</button>
+            {errors.body && <span>{errors.body.message}</span>}
+            <button disabled={!isValid}>Save</button>
         </form>
     );
 };
