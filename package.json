@@ -14,7 +14,8 @@
     "web-vitals": "^2.1.4",
     "react-hook-form": "^7.36.0",
     "joi": "^17.6.0",
-    "@hookform/resolvers": "^2.9.8"
+    "@hookform/resolvers": "^2.9.8",
+    "react-router-dom": "^6.4.1"
 
   },
   "devDependencies": {
