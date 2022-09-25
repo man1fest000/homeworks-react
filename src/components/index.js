@@ -6,3 +6,4 @@ export * from './Posts/Posts';
 export * from './Post/Post';
 export * from './Todos/Todos';
 export * from './Todo/Todo';
+export * from "./Header/Header"
