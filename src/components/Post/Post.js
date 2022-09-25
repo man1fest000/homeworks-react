@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
-import { postsService } from "../../services/posts.service";
 import {  useParams } from "react-router-dom";
+
+import { postsService } from "../../services/posts.service";
+import css from "./Post.module.css";
 
 const Post = () => {
 
@@ -15,7 +17,7 @@ const Post = () => {
     }, [id]);
 
     return (
-        <div>
+        <div className={css.Post}>
             <h2>Post - {post.id}</h2>
             <div>UserId - {post.userId}</div>
             <div>Title - {post.title}</div>

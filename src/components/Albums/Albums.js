@@ -1,6 +1,7 @@
-import { getAlbums } from "../../services/albums.service";
 import { useEffect, useState } from "react";
+
 import { Album } from "../Album/Album";
+import { getAlbums } from "../../services/albums.service";
 
 
 const Albums = () => {

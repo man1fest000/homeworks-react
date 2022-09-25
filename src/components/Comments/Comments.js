@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { getComments } from "../../services/comments.service";
+import { Outlet } from "react-router-dom";
+
 import { Comment } from "../Comment/Comment";
-
-
+import { getComments } from "../../services/comments.service";
+import css from "./Comments.module.css"
 
 const Comments = () => {
 
@@ -16,11 +17,15 @@ const Comments = () => {
 
     return (
         <div>
-            <h2>Comments</h2>
+            <div >
+                <div className={css.commentsWrap}>
+                    {
+                        comments.map(comment => <Comment key={comment.id} comment={comment}  />)
+                    }
+                </div>
+                <Outlet/>
 
-            {
-                comments.map(comment => <Comment key={comment.id} comment={comment}  />)
-            }
+            </div>
         </div>
     );
 };

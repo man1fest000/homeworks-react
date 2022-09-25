@@ -1,0 +1,11 @@
+.HomePage{
+
+}
+
+/*H1 center vertical */
+.HomePage > h1{
+    display: flex;
+    justify-content: center;
+    font-size: 100px;
+    margin-top: 300px
+}

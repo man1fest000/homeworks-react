@@ -1,0 +1,21 @@
+
+
+.menu{
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu a{
+    text-decoration: none;
+    color: black;
+
+}
+.menu a:hover{
+    text-decoration-line: underline;
+}
+
+.menu a[class="active"]{
+    color: rgba(108, 108, 108, 0.8);
+    text-decoration: none;
+}
+
