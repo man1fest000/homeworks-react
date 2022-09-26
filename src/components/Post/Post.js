@@ -1,14 +1,11 @@
 import { useEffect, useState } from "react";
-import {  useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { postsService } from "../../services/posts.service";
 import css from "./Post.module.css";
 
 const Post = () => {
-
     const { id } = useParams();
-
-
 
     const [post, setPost] = useState([]);
 
