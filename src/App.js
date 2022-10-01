@@ -1,7 +1,9 @@
 import "./App.css";
 
 import { useReducer, useRef } from "react";
-import { Animal } from "./components";
+
+import { Animals } from "./components";
+import { Inputs } from "./components";
 
 
 function App() {
@@ -11,7 +13,7 @@ function App() {
         dog: [],
     };
 
-    const formReduser = (state, action) => {
+    const reducer = (state, action) => {
         switch (action.type) {
             case "ADD_CAT":
                 return {
@@ -40,7 +42,7 @@ function App() {
 
     };
 
-    const [state, dispatch] = useReducer(formReduser, initialState);
+    const [state, dispatch] = useReducer(reducer, initialState);
 
     const catRef = useRef();
     const dogRef = useRef();
@@ -61,23 +63,9 @@ function App() {
 
         <div className="App">
 
-            <input type="text" placeholder={"cat"} name={"cat"} ref={catRef} />
-            <button onClick={handleCat}>Add Cat</button>
+            <Inputs catRef={catRef} dogRef={dogRef} handleCat={handleCat} handleDog={handleDog} />
 
-            <input type="text" placeholder={"dog"} name={"dog"} ref={dogRef} />
-            <button onClick={handleDog}>Add Dog</button>
-
-            <div>
-                {
-                    state.cat.map((item, index) => <Animal key={index} item={item} index={index} dispatch={dispatch} deleteAnimal={"DELETE_CAT"} />)
-                }
-            </div>
-
-            <div>
-                {
-                    state.dog.map((item, index) => <Animal key={index} item={item} index={index} dispatch={dispatch} deleteAnimal={'DELETE_DOG'}/>)
-                }
-            </div>
+            <Animals state={state} dispatch={dispatch} />
 
 
         </div>
