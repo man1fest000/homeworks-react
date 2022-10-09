@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { userActions } from "../../redux";
+import  css from './User.module.css'
 
 const User = ({user}) => {
     const {id, name, email,username}= user
@@ -7,7 +8,7 @@ const User = ({user}) => {
     const dispatch = useDispatch();
 
     return (
-        <div>
+        <div className={css.User}>
             <div>id: {id}</div>
             <div>name: {name}</div>
             <div>userName: {username}</div>

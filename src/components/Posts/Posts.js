@@ -12,14 +12,12 @@ const Posts = () => {
     },[])
     return (
         <div>
-            {loading && <h1>Loading...</h1>} }
+            {loading && <h1>Loading...</h1>}
             {error && <h1>Error</h1>}
             {postFromAPI && <h1>{postFromAPI.title}</h1>}
             {
                 posts.map(post=><Post key={post.id} post={post} />)
             }
-
-            
         </div>
     );
 };

@@ -1,14 +1,22 @@
 import "./App.css";
-import { Header, Posts, Users } from "./components";
+import { Navigate, Route, Routes } from "react-router-dom";
+import { MainLayout } from "./layouts";
+import { UsersPage } from "./pages";
+import { PostsPages } from "./pages/PostsPages/PostsPages";
+
+
 
 function App() {
     return (
         <div className="App">
-            <Header />
-            <div className={'wrapper-users-post'}>
-                <Users />
-                <Posts />
-            </div>
+
+            <Routes>
+                <Route path={'/'} element={<MainLayout />}>
+                    <Route index element={<Navigate to={'users'} />}/>
+                    <Route path={'users'} element={<UsersPage/>}/>
+                    <Route path={'posts'} element={<PostsPages/>}/>
+                </Route>
+            </Routes>
         </div>
     );
 }

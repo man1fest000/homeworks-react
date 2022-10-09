@@ -1,0 +1,13 @@
+.Header {
+    background: antiquewhite;
+    padding: 0 20px;
+}
+
+.Links{
+    display: flex;
+    justify-content: space-around;
+}
+
+.postTitle{
+    text-align: center;
+}
