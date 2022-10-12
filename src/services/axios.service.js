@@ -1,8 +1,8 @@
 import axios from "axios";
-import { jsonPlaceholder, owuLinkPc } from "../configs";
+import {baseURL} from "../configs";
 
-const axiosServiceJsonPlaceholder = axios.create({ baseURL:jsonPlaceholder });
 
-const axiosServiceOwuLinkPc = axios.create({baseURL:owuLinkPc});
+const axiosService = axios.create({ baseURL });
 
-export { axiosServiceJsonPlaceholder, axiosServiceOwuLinkPc };
+
+export { axiosService  };

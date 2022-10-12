@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { userActions } from "../../redux";
+
 import  css from './User.module.css'
 
 const User = ({user}) => {

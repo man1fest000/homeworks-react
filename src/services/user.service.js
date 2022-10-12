@@ -1,9 +1,9 @@
-import { axiosServiceJsonPlaceholder } from "./axios.service";
+import { axiosService } from "./axios.service";
 import { urls } from "../configs";
 
 const userService = {
-    getAll : () => axiosServiceJsonPlaceholder.get(urls.users),
-    getById : (id)=> axiosServiceJsonPlaceholder.get(`${urls.users}/${id}`)
+    getAll : () => axiosService.get(urls.users),
+    getById : (id)=> axiosService.get(`${urls.users}/${id}`)
 }
 
 

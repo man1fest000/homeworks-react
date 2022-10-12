@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+
 import css from "./Header.module.css";
 
 const Header = () => {
@@ -16,9 +17,6 @@ const Header = () => {
                     </h2>
                     <h2>
                         <NavLink to={"posts"}>Posts</NavLink>
-                    </h2>
-                    <h2>
-                        <NavLink to={'cars'}>Cars</NavLink>
                     </h2>
                 </div>
                 <div className={css.currentUser}>{currentUser && <h2> {currentUser.name} </h2>}</div>
