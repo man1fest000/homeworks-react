@@ -2,7 +2,8 @@ import "./App.css";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { MainLayout } from "./layouts";
 import { UsersPage } from "./pages";
-import { PostsPages } from "./pages/PostsPages/PostsPages";
+import { PostsPage } from "./pages/PostsPage/PostsPage";
+import {Cars} from "./components/Cars/Cars";
 
 
 
@@ -15,7 +16,8 @@ function App() {
                 <Route path={'/'} element={<MainLayout />}>
                     <Route index element={<Navigate to={'users'} />}/>
                     <Route path={'users'} element={<UsersPage/>}/>
-                    <Route path={'posts'} element={<PostsPages/>}/>
+                    <Route path={'posts'} element={<PostsPage/>}/>
+                    <Route path={'cars'} element={<Cars/>}/>
                 </Route>
             </Routes>
         </div>

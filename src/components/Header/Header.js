@@ -18,6 +18,9 @@ const Header = () => {
                     <h2>
                         <NavLink to={"posts"}>Posts</NavLink>
                     </h2>
+                    <h2>
+                        <NavLink to={"cars"}>Cars</NavLink>
+                    </h2>
                 </div>
                 <div className={css.currentUser}>{currentUser && <h2> {currentUser.name} </h2>}</div>
             </div>
@@ -26,4 +29,4 @@ const Header = () => {
     );
 };
 
-export { Header };
+export {Header};

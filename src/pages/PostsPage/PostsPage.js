@@ -1,6 +1,6 @@
 import { Posts } from "../../components";
 
-const PostsPages = () => {
+const PostsPage = () => {
     return (
         <div>
             <Posts/>
@@ -8,4 +8,4 @@ const PostsPages = () => {
     );
 };
 
-export { PostsPages };
+export { PostsPage };
